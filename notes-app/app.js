@@ -10,5 +10,5 @@ const msg = getNotes()
 
 console.log(msg)
 
-console.log(validator.isEmail('mike@example.com'))
+console.log(validator.isURL('http://michaelrwiss.com/'))
 
