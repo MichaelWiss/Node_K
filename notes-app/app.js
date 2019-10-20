@@ -3,7 +3,7 @@ const getNotes = require('./notes.js')
 const chalk = require('chalk')
 
 
-const success = chalk.green;
+const success = chalk.green.bgYellowBright;
 const msg = getNotes()
 
 
