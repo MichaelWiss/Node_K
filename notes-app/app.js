@@ -1,27 +1,49 @@
 const validator = require('validator')
-const getNotes = require('./notes.js')
 const chalk = require('chalk')
-
-const command = process.argv[2]
-
-
-const success = chalk.green.bgYellowBright;
-const msg = getNotes()
-
-console.log(process.argv)
+const yargs = require('yargs')
+const getNotes = require('./notes.js')
 
 
-console.log(msg)
 
-console.log(validator.isURL('http://michaelrwiss.com/'))
-console.log(success('Success!'));
-console.log(success('Good Day!'));
+yargs.version('1.1.0')
 
-if (command === 'add') {
-	console.log('Adding note!')
-} else if (command === 'remove') {
-	console.log('Removing note')
-}
+yargs.command({
+     command: 'add',
+     describe: 'Add a new note',
+     handler: function () {
+     	console.log('Adding a new note!')
+     }
+})
+
+
+yargs.command({
+	command: 'remove',
+	describe: 'Remove a note',
+	handler: function () {
+		console.log('Removing the note!')
+	}
+})
+
+yargs.command({
+	command: 'list',
+	describe: 'List all notes',
+	handler: function () {
+		console.log('List all the notes')
+	}
+})
+
+yargs.command({
+	command: 'read',
+	describe: 'Read all notes',
+	handler: function () {
+		console.log('Read all the notes')
+	}
+})
+
+
+console.log(yargs.argv)
+
+
 
 
 
