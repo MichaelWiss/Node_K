@@ -26,14 +26,14 @@ const dataJSON = dataBuffer.toString()
 
 const user = JSON.parse(dataJSON)
 
-user.planet = 'Saturn'
+user.planet = 'Pluto'
 user.age = '48'
 
 
 
 const userJSON = JSON.stringify(user)
 fs.writeFileSync('1-json.json', userJSON)
-console.log(user.planet)
-console.log(user.age)
+// console.log(user.planet)
+// console.log(user.age)
 
 
